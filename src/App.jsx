@@ -1,11 +1,18 @@
 import React from "react";
-import Welcome from "./pages/Welcome";
+
 import "./styles/main.css";
+
+import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks } from "./pages";
 
 const App = () => {
   return (
     <div className="App">
-      <Welcome />
+      <Welcome/>
+      <StepOne/>
+      <StepTwo/>
+      <StepThree/>
+      <StepFour/>
+      <Thanks/> 
     </div>
   );
 };

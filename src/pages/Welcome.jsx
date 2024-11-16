@@ -1,6 +1,8 @@
 import React from "react";
+import { Button, Input } from "../components";
 
-const Welcome = () => {
+
+export const Welcome = () => {
   return (
     <div className="container">
       <div className="wrapper">
@@ -9,8 +11,7 @@ const Welcome = () => {
           <form className="welcome__form">
             <label className="input-wrapper" htmlFor="username">
               Ваше имя
-              <input
-                required
+              <Input
                 type="text"
                 name="username"
                 id="username"
@@ -22,8 +23,7 @@ const Welcome = () => {
             </label>
             <label className="input-wrapper" htmlFor="username">
               Ваш номер
-              <input
-                required
+              <Input 
                 type="tel"
                 name="phone"
                 id="phone"
@@ -32,14 +32,12 @@ const Welcome = () => {
               />
               <span id="error-message">Введите номер в правильном формате</span>
             </label>
-            <button disabled type="submit" id="next-btn">
-              Далее
-            </button>
+            <Button
+              type="submit" id="next-btn" text="Далее"
+            />
           </form>
         </div>
       </div>
     </div>
   );
 };
-
-export default Welcome;

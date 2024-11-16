@@ -1,6 +1,7 @@
 import React from "react";
+import { Button, Input } from "../components";
 
-const StepOne = () => {
+export const StepOne = () => {
   return (
     <div className="container">
       <div className="wrapper">
@@ -22,7 +23,7 @@ const StepOne = () => {
           <div className="question">
             <h2>1. Занимательный вопрос</h2>
             <label className="input-wrapper">
-              <input
+              <Input
                 required
                 type="text"
                 name="answer"
@@ -32,14 +33,10 @@ const StepOne = () => {
                 Введите номер в правильном формате например
               </span>
             </label>
-            <button type="button" disabled id="next-btn">
-              Далее
-            </button>
+            <Button type="button" disabled id="next-btn" text="Далее"/> 
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default StepOne;

@@ -1,6 +1,7 @@
 import React from "react";
+import { Button, Input } from "../components";
 
-const StepThree = () => {
+export const StepThree = () => {
   return (
     <div className="container">
       <div className="wrapper">
@@ -23,42 +24,38 @@ const StepThree = () => {
             <h2>3. Занимательный вопрос</h2>
             <ul className="emoji-variants">
               <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-1" />
+                <Input required type="radio" name="variant" id="variant-1" />
                 <label htmlFor="variant-1">
                   <img src="./img/laugh.png" alt="laugh" />
                   <p>Ваш ответ 1</p>
                 </label>
               </li>
               <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-2" />
+                <Input required type="radio" name="variant" id="variant-2" />
                 <label htmlFor="variant-2">
                   <img src="./img/hearts.png" alt="hearts" />
                   <p>Ваш ответ 2</p>
                 </label>
               </li>
               <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-3" />
+                <Input required type="radio" name="variant" id="variant-3" />
                 <label htmlFor="variant-3">
                   <img src="./img/smirk.png" alt="smirk" />
                   <p>Ваш ответ 3</p>
                 </label>
               </li>
               <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-4" />
+                <Input required type="radio" name="variant" id="variant-4" />
                 <label htmlFor="variant-4">
                   <img src="./img/fright.png" alt="fright" />
                   <p>Ваш ответ 4</p>
                 </label>
               </li>
             </ul>
-            <button type="button" disabled id="next-btn">
-              Далее
-            </button>
+            <Button type="button" disabled id="next-btn" text="Далее"/>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default StepThree;
