@@ -9,7 +9,7 @@ export const Thanks = () => {
           <img src="./img/bell.png" alt="bell" />
           <h1>Спасибо за прохождение опроса!</h1>
           <p>Получи свою скидку по ссылке ниже или другое блаблабла</p>
-          <Button type="button" id="get-link" text="Получить ссылку"/>
+          <Button id="get-link" text="Получить ссылку"/>
         </div>
       </div>
     </div>

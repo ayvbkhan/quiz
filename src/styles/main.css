@@ -119,34 +119,6 @@ input:disabled::placeholder {
   color: #b8bcc5;
 }
 
-button {
-  cursor: pointer;
-  width: 100%;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  background-color: #a497f9;
-  color: white;
-  padding: 22.5px 0;
-  transition: 200ms;
-}
-button:disabled {
-  background-color: #b8bcc5;
-}
-button:enabled:hover {
-  background-color: transparent;
-  border-color: #a497f9;
-  color: #a497f9;
-  box-shadow: 0 0 20px #a497f9;
-}
-button:disabled:hover, button:disabled:active {
-  opacity: 0.5;
-  cursor: default;
-}
-button:enabled:active {
-  transition: 100ms;
-  box-shadow: none;
-}
-
 .indicator {
   position: fixed;
   top: 70px;

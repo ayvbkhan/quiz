@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from "./Input.module.css"
+
 export const Input = ({type, name, id, placeholder, pattern}) => {
   return (
     <input
@@ -9,13 +11,7 @@ export const Input = ({type, name, id, placeholder, pattern}) => {
       id={id}
       placeholder={placeholder}
       pattern={pattern}
+      className={styles.buttonStyle}
     />
   )
 }
-
-
-// required
-//                 type="text"
-//                 name="username"
-//                 id="username"
-//                 placeholder="Ваш ответ"

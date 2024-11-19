@@ -1,0 +1,26 @@
+.inputStyle {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #aeb4c2;
+  }
+  .inputStyle::-moz-placeholder {
+    color: #5a6684;
+  }
+  .inputStyle::placeholder {
+    color: #5a6684;
+  }
+  .inputStyle:focus {
+    border-bottom-color: #a497f9;
+  }
+  .inputStyle:disabled {
+    color: #b8bcc5;
+    border-bottom-color: #b8bcc5;
+  }
+  .inputStyle:disabled::-moz-placeholder {
+    color: #b8bcc5;
+  }
+  .inputStyle:disabled::placeholder {
+    color: #b8bcc5;
+  }
+
+  

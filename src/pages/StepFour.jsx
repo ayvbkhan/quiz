@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "../components";
+import { Button, Progress } from "../components";
 
 export const StepFour = () => {
   return (
@@ -13,34 +13,29 @@ export const StepFour = () => {
               </span>
               <span className="indicator__value">15%</span>
             </div>
-            <div className="indicator__progressbar">
-              <div className="indicator__unit indicator__unit-1 _active"></div>
-              <div className="indicator__unit indicator__unit-2 _active"></div>
-              <div className="indicator__unit indicator__unit-3 _active"></div>
-              <div className="indicator__unit indicator__unit-4"></div>
-            </div>
+            <Progress currentPage={3} />
           </div>
           <div className="question">
             <h2>4. Занимательный вопрос</h2>
             <ul className="level-variants">
               <li className="variant-wrapper">
-                <Input required type="radio" name="variant" id="variant-1" />
+                <input required type="radio" name="variant" id="variant-1" />
                 <label htmlFor="variant-1">1</label>
               </li>
               <li className="variant-wrapper">
-                <Input required type="radio" name="variant" id="variant-2" />
+                <input required type="radio" name="variant" id="variant-2" />
                 <label htmlFor="variant-2">2</label>
               </li>
               <li className="variant-wrapper">
-                <Input required type="radio" name="variant" id="variant-3" />
+                <input required type="radio" name="variant" id="variant-3" />
                 <label htmlFor="variant-3">3</label>
               </li>
               <li className="variant-wrapper">
-                <Input required type="radio" name="variant" id="variant-4" />
+                <input required type="radio" name="variant" id="variant-4" />
                 <label htmlFor="variant-4">4</label>
               </li>
               <li className="variant-wrapper">
-                <Input required type="radio" name="variant" id="variant-5" />
+                <input required type="radio" name="variant" id="variant-5" />
                 <label htmlFor="variant-5">5</label>
               </li>
             </ul>
