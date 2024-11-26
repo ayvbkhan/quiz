@@ -1,20 +1,11 @@
 import React from "react";
-import { Button, Progress } from "../components";
+import { Button } from "../components";
 
 export const StepThree = () => {
   return (
     <div className="container">
       <div className="wrapper">
         <div className="emoji-quiz">
-          <div className="indicator">
-            <div className="indicator__text">
-              <span className="indicator__description">
-                Скидка за прохождение опроса:
-              </span>
-              <span className="indicator__value">15%</span>
-            </div>
-            <Progress currentPage={2} />
-          </div>
           <div className="question">
             <h2>3. Занимательный вопрос</h2>
             <ul className="emoji-variants">

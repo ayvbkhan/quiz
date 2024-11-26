@@ -120,7 +120,7 @@ input:disabled::placeholder {
 }
 
 .indicator {
-  position: fixed;
+  position: relative;
   top: 70px;
   left: 50%;
   transform: translateX(-50%);
