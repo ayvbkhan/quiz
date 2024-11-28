@@ -1,6 +1,13 @@
 import React from "react";
 import { Button } from "../components";
 
+const emojiVariants = [
+  { id: 1, imgSrc: "/img/laugh.png", alt: "laugh", text: "Ваш ответ 1" },
+  { id: 2, imgSrc: "/img/hearts.png", alt: "hearts", text: "Ваш ответ 2" },
+  { id: 3, imgSrc: "/img/smirk.png", alt: "smirk", text: "Ваш ответ 3" },
+  { id: 4, imgSrc: "/img/fright.png", alt: "fright", text: "Ваш ответ 4" },
+];
+
 export const StepThree = () => {
   return (
     <div className="container">
@@ -9,34 +16,15 @@ export const StepThree = () => {
           <div className="question">
             <h2>3. Занимательный вопрос</h2>
             <ul className="emoji-variants">
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-1" />
-                <label htmlFor="variant-1">
-                  <img src="./img/laugh.png" alt="laugh" />
-                  <p>Ваш ответ 1</p>
-                </label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-2" />
-                <label htmlFor="variant-2">
-                  <img src="./img/hearts.png" alt="hearts" />
-                  <p>Ваш ответ 2</p>
-                </label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-3" />
-                <label htmlFor="variant-3">
-                  <img src="./img/smirk.png" alt="smirk" />
-                  <p>Ваш ответ 3</p>
-                </label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-4" />
-                <label htmlFor="variant-4">
-                  <img src="./img/fright.png" alt="fright" />
-                  <p>Ваш ответ 4</p>
-                </label>
-              </li>
+              {emojiVariants.map(({ id, imgSrc, alt, text }) => (
+                <li className="variant-wrapper" key={id}>
+                  <input required type="radio" name="variant" id={`variant-${id}`} />
+                  <label htmlFor={`variant-${id}`}>
+                    <img src={imgSrc} alt={alt} />
+                    <p>{text}</p>
+                  </label>
+                </li>
+              ))}
             </ul>
             <Button type="button" disabled id="next-btn" text="Далее"/>
           </div>

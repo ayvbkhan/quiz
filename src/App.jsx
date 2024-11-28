@@ -1,23 +1,21 @@
 import React from "react";
-
+import { Route, Routes } from "react-router";
 import "./styles/main.css";
-
-import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks } from "./pages";
-import { Progress } from "./components";
+import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks, Step } from "./pages";
 
 const App = () => {
   return (
     <div className="App">
-      <Welcome/>
-      <Progress currentPage={0} sale="0"/>
-      <StepOne/>
-      <Progress currentPage={1} sale="5"/>
-      <StepTwo/>
-      <Progress currentPage={2} sale="10"/>
-      <StepThree/>
-      <Progress currentPage={3} sale="15"/>
-      <StepFour/>
-      <Thanks/> 
+      <Routes>
+        <Route index element={<Welcome />} />
+        <Route path="/step" element={<Step />}>
+          <Route index path="1" element={<StepOne />} />
+          <Route path="2" element={<StepTwo />} />
+          <Route path="3" element={<StepThree />} />
+          <Route path="4" element={<StepFour />} />
+        </Route>
+        <Route path="/thanks" element={<Thanks />} />
+      </Routes>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "../components";
 
+const levelVariants = [1, 2, 3, 4, 5];
+
 export const StepFour = () => {
   return (
     <div className="container">
@@ -9,26 +11,12 @@ export const StepFour = () => {
           <div className="question">
             <h2>4. Занимательный вопрос</h2>
             <ul className="level-variants">
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-1" />
-                <label htmlFor="variant-1">1</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-2" />
-                <label htmlFor="variant-2">2</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-3" />
-                <label htmlFor="variant-3">3</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-4" />
-                <label htmlFor="variant-4">4</label>
-              </li>
-              <li className="variant-wrapper">
-                <input required type="radio" name="variant" id="variant-5" />
-                <label htmlFor="variant-5">5</label>
-              </li>
+              {levelVariants.map(level => (
+                <li className="variant-wrapper" key={level}>
+                  <input required type="radio" name="variant" id={`variant-${level}`} />
+                  <label htmlFor={`variant-${level}`}>{level}</label>
+                </li>
+              ))}
             </ul>
             <Button type="button" id="next-btn" disabled text="Далее"/>
           </div>

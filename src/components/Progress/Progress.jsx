@@ -15,8 +15,9 @@ export const Progress = ({ currentPage, sale }) => {
         {Array.from({ length: steps }, (_, index) => (
           <div
             key={index}
-            className={`indicator__unit indicator__unit-${index + 1} ${index < currentPage ? "_active" : ""
-              }`}
+            className={`indicator__unit 
+                        ${index < currentPage ? "_completed" : ""} 
+                        ${index === currentPage - 1 ? "_active" : ""}`}
           ></div>
         ))}
       </div>

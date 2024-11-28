@@ -22,8 +22,6 @@ export const StepTwo = () => {
     }
   ]
   return (
-    <div className="container">
-      <div className="wrapper">
         <div className="variants-quiz">
           <div className="question">
             <h2>1. Занимательный вопрос</h2>
@@ -35,7 +33,5 @@ export const StepTwo = () => {
             <Button disabled id="next-btn" text="Далее" />
           </div>
         </div>
-      </div>
-    </div>
   );
 };

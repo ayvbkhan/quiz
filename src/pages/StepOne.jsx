@@ -3,8 +3,6 @@ import { Button, Input } from "../components";
 
 export const StepOne = () => {
   return (
-    <div className="container">
-      <div className="wrapper">
         <div className="single-input-quiz">
           <div className="question">
             <h2>1. Занимательный вопрос</h2>
@@ -22,7 +20,5 @@ export const StepOne = () => {
             <Button type="button" disabled id="next-btn" text="Далее"/> 
           </div>
         </div>
-      </div>
-    </div>
   );
 };

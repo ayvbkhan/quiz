@@ -118,13 +118,13 @@ input:disabled::-moz-placeholder {
 input:disabled::placeholder {
   color: #b8bcc5;
 }
-
 .indicator {
   position: relative;
-  top: 70px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   width: 388px;
+  z-index: 1;
 }
 .indicator__text {
   display: flex;
@@ -142,9 +142,14 @@ input:disabled::placeholder {
   border: 1px solid #aeb4c2;
   border-radius: 161px;
 }
-.indicator__unit._active {
+.indicator__unit._completed {
   background-color: #ffeb80;
   border: 0;
+}
+
+.indicator__unit._active {
+  background-color: #ffeb80;
+  border: 1px solid #000000;
 }
 
 .welcome h1 {
