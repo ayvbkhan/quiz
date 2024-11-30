@@ -24,7 +24,7 @@ export const StepTwo = () => {
   return (
         <div className="variants-quiz">
           <div className="question">
-            <h2>1. Занимательный вопрос</h2>
+            <h2>2. Занимательный вопрос</h2>
             <ul className="variants">
               {answers.map(({ id, answer }) => (
                 <Option id={id} answer={answer} key={id} />

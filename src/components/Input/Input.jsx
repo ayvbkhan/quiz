@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from "./Input.module.css"
 
-export const Input = ({type, name, id, placeholder, pattern}) => {
+export const Input = ({ type, name, id, placeholder, pattern, ...props }) => {
   return (
     <input
       required
@@ -12,6 +12,7 @@ export const Input = ({type, name, id, placeholder, pattern}) => {
       placeholder={placeholder}
       pattern={pattern}
       className={styles.buttonStyle}
+      {...props}
     />
   )
 }
