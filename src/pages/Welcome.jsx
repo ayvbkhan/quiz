@@ -57,7 +57,7 @@ export const Welcome = () => {
               name="username"
               id="username"
               placeholder="Ваш ответ"
-              errorMessage="Поле имени не может быть пустым"
+              errormessage="Поле имени не может быть пустым"
               onInput={onNameInputHandler} 
             />
             <Input
@@ -66,7 +66,7 @@ export const Welcome = () => {
               name="phone"
               id="phone"
               placeholder="+998 9- --- -- --"
-              errorMessage="Введите номер в правильном формате"
+              errormessage="Введите номер в правильном формате"
               onInput={onPhoneInputHandler} 
             />
             <Button
