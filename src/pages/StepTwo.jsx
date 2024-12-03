@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Option } from "../components";
+import { useNavigate } from "react-router";
 
 export const StepTwo = () => {
+
+  const navigate = useNavigate();
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const onOptionSelect = (id) => {
+    setSelectedOption(id); 
+  };
+
+  const isButtonDisabled = selectedOption === null;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (selectedOption !== null) {
+      navigate("/step/3"); 
+    }
+  };
 
   const answers = [
     {
@@ -24,13 +42,20 @@ export const StepTwo = () => {
   return (
         <div className="variants-quiz">
           <div className="question">
-            <h2>2. Занимательный вопрос</h2>
+        <h2>2. Занимательный вопрос</h2>
+        <form onSubmit={onSubmit}>
             <ul className="variants">
               {answers.map(({ id, answer }) => (
-                <Option id={id} answer={answer} key={id} />
+                <Option
+                  id={id}
+                  answer={answer}
+                  key={id}
+                  isSelected={selectedOption === id}
+                  onClick={() => onOptionSelect(id)} />
               ))}
             </ul>
-            <Button disabled id="next-btn" text="Далее" />
+          <Button type="submit" id="next-btn" text="Далее" disabled={isButtonDisabled} />
+        </form>
           </div>
         </div>
   );

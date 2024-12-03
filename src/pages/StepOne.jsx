@@ -1,24 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input } from "../components";
+import { useNavigate } from "react-router";
 
 export const StepOne = () => {
+
+  const navigate = useNavigate();
+  const [isAnswerValid, setIsAnswerValid] = useState(false);
+
+  const onAnswerInputHandler = (e) => {
+    const value = e.target.value.trim();
+    if (value.length >= 3) { 
+      setIsAnswerValid(true)
+      return
+    }
+    
+    if (value.length < 3) {
+      setIsAnswerValid(false)
+      return 
+    }
+  };
+
+  const isButtonDisabled = !isAnswerValid;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (isAnswerValid) {
+      navigate("/step/2");
+    }
+  };
+
   return (
-        <div className="single-input-quiz">
-          <div className="question">
-            <h2>1. Занимательный вопрос</h2>
-            <label className="input-wrapper">
-              <Input
-                required
-                type="text"
-                name="answer"
-                placeholder="Ваш ответ"
-              />
-              <span id="error-message">
-                Введите номер в правильном формате например
-              </span>
-            </label>
-            <Button type="button" disabled id="next-btn" text="Далее"/> 
-          </div>
-        </div>
+    <div className="single-input-quiz">
+      <div className="question">
+        <h2>1. Занимательный вопрос</h2>
+        <form onSubmit={(e) => onSubmit(e, navigate)}>
+          <label className="input-wrapper">
+            <Input
+              required
+              type="text"
+              name="answer"
+              placeholder="Ваш ответ"
+              onInput={onAnswerInputHandler} 
+            />
+            <span id="error-message">
+              Введите номер в правильном формате например
+            </span>
+          </label>
+          <Button type="submit" id="next-btn" text="Далее" disabled={isButtonDisabled} />
+        </form>
+      </div>
+    </div>
   );
 };

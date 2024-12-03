@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from "./Input.module.css"
+import { ThemeContext } from '../../context';
+import classNames from 'classnames';
 
 export const Input = ({ type, name, id, placeholder, pattern, ...props }) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <input
       required
@@ -11,7 +14,10 @@ export const Input = ({ type, name, id, placeholder, pattern, ...props }) => {
       id={id}
       placeholder={placeholder}
       pattern={pattern}
-      className={styles.buttonStyle}
+      className={classNames(styles.inputStyle, {
+        [styles.light]: theme === 'light', 
+        [styles.dark]: theme === 'dark'    
+      })}
       {...props}
     />
   )

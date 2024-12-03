@@ -73,7 +73,7 @@ export const Welcome = () => {
               type="submit"
               id="next-btn"
               text="Далее"
-              disabled={isButtonDisabled} // Кнопка активна, если оба поля валидны
+              disabled={isButtonDisabled} 
             />
           </form>
         </div>

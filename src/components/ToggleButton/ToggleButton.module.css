@@ -1,0 +1,44 @@
+.toggleStyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    width: 200px;
+    padding: 10px;
+    background-color: var(--background, #f0f0f0);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+.toggleStyle button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--button-bg, #ffffff);
+    color: var(--button-color, #333);
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggleStyle button:hover {
+    background-color: var(--button-hover-bg, #ddd);
+    color: var(--button-hover-color, #000);
+}
+
+@media (max-width: 400px) {
+    .toggleStyle {
+        width: 150px;
+        padding: 8px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+    .toggleStyle button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

@@ -23,4 +23,7 @@
     color: #b8bcc5;
   }
 
-  
+  .inputStyle.dark {
+    background-color: #22222a;
+    color: white;
+    }

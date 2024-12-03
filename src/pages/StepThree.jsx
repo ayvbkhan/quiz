@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../components";
+import { useNavigate } from "react-router";
 
 const emojiVariants = [
   { id: 1, imgSrc: "/img/laugh.png", alt: "laugh", text: "Ваш ответ 1" },
@@ -9,24 +10,42 @@ const emojiVariants = [
 ];
 
 export const StepThree = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const navigate = useNavigate();
+  const onOptionSelect = (id) => {
+    setSelectedOption(id);
+  };
+
+  const isButtonDisabled = selectedOption === null;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (selectedOption !== null) {
+      navigate("/step/4");
+    }
+  };
+
+
   return (
     <div className="container">
       <div className="wrapper">
         <div className="emoji-quiz">
           <div className="question">
             <h2>3. Занимательный вопрос</h2>
-            <ul className="emoji-variants">
-              {emojiVariants.map(({ id, imgSrc, alt, text }) => (
-                <li className="variant-wrapper" key={id}>
-                  <input required type="radio" name="variant" id={`variant-${id}`} />
-                  <label htmlFor={`variant-${id}`}>
-                    <img src={imgSrc} alt={alt} />
-                    <p>{text}</p>
-                  </label>
-                </li>
-              ))}
-            </ul>
-            <Button type="button" disabled id="next-btn" text="Далее"/>
+            <form onSubmit={onSubmit}>
+              <ul className="emoji-variants">
+                {emojiVariants.map(({ id, imgSrc, alt, text }) => (
+                  <li className="variant-wrapper" key={id} onClick={() => onOptionSelect(id)}>
+                    <input type="radio" name="variant" id={`variant-${id}`} onChange={() => onOptionSelect(id)} />
+                    <label htmlFor={`variant-${id}`}>
+                      <img src={imgSrc} alt={alt} />
+                      <p>{text}</p>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+              <Button type="submit" id="next-btn" text="Далее" disabled={isButtonDisabled} />
+            </form>
           </div>
         </div>
       </div>

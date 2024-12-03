@@ -1,11 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router";
 import "./styles/main.css";
 import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks, Step } from "./pages";
+import { ThemeContext } from "./context";
+import { ToggleButton } from "./components";
 
-const App = () => {
+  const App = () => {
+  const [theme, setTheme] = useState()
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme')
+
+    if (theme) {
+      setTheme(theme)
+      return
+    }
+
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkMode) {
+      setTheme('dark')
+      return
+    }
+
+    setTheme('light')
+  }, [])
+
+  useEffect(() => {
+    if (theme === 'light') {
+      document.body.classList.add('light')
+      document.body.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+      return
+    }
+
+    if (theme === 'dark') {
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
+      localStorage.setItem('theme', 'dark')
+    }
+  }, [theme])
+
+
+
   return (
-    <div className="App">
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ToggleButton />
       <Routes>
         <Route index element={<Welcome />} />
         <Route path="/step" element={<Step />}>
@@ -14,9 +53,10 @@ const App = () => {
           <Route path="3" element={<StepThree />} />
           <Route path="4" element={<StepFour />} />
         </Route>
+
         <Route path="/thanks" element={<Thanks />} />
       </Routes>
-    </div>
+    </ThemeContext.Provider>
   );
 };
 

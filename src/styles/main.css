@@ -11,7 +11,26 @@ body {
   font-family: "TT Hoves";
   font-size: 16px;
   height: 100vh;
+}
+
+body.light {
+  background-color: white;
   color: #22222a;
+}
+
+body.dark {
+  background-color: #22222a;
+  color: white;
+}
+body.dark h2 {
+  color: white;
+}
+
+@media (prefers-color-scheme:dark){
+  body {
+    background-color: black;
+    color: white;
+  }
 }
 
 #root, .App {
@@ -149,7 +168,7 @@ input:disabled::placeholder {
 
 .indicator__unit._active {
   background-color: #ffeb80;
-  border: 1px solid #000000;
+  border: 2px solid #a8962d;
 }
 
 .welcome h1 {
@@ -238,7 +257,7 @@ input:disabled::placeholder {
 }
 .emoji-variants .variant-wrapper input[type=radio]:checked + label {
   border-color: #a497f9;
-  background-color: #f3f2ff;
+  background-color: #bfbbe2;
 }
 
 .question h2 {
@@ -266,7 +285,7 @@ input:disabled::placeholder {
   display: block;
   padding: 12px 16px;
   height: 61px;
-  color: #5a6684;
+  color: #545f7a;
   border: 2px solid #aeb4c2;
   border-radius: 8px;
   display: flex;
@@ -286,7 +305,7 @@ input:disabled::placeholder {
 }
 .level-variants .variant-wrapper input[type=radio]:checked + label {
   border-color: #a497f9;
-  background-color: #f3f2ff;
+  background-color: #b8b6cf;
 }
 .level-variants .variant-wrapper label::after {
   content: "";
@@ -302,12 +321,15 @@ input:disabled::placeholder {
 }
 .level-variants .variant-wrapper label[for=variant-1]::after {
   content: "скорее нет";
+  color:#8a8e99; 
 }
 .level-variants .variant-wrapper label[for=variant-3]::after {
   content: "не знаю";
+  color: #8a8e99;
 }
 .level-variants .variant-wrapper label[for=variant-5]::after {
   content: "скорее да";
+  color: #8a8e99;
 }
 
 .thanks img {
