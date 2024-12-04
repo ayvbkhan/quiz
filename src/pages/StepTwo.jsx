@@ -17,6 +17,10 @@ export const StepTwo = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (selectedOption !== null) {
+      sessionStorage.setItem("question2", selectedOption);
+
+      console.log("Current sessionStorage:", Object.fromEntries(Object.entries(sessionStorage)));
+
       navigate("/step/3"); 
     }
   };

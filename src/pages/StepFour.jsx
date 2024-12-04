@@ -15,6 +15,10 @@ export const StepFour = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (isLevelSelected) {
+      const selectedLevel = document.querySelector("input[name='variant']:checked").id.split("-")[1];
+      sessionStorage.setItem("question4", selectedLevel);
+
+      console.log("Current sessionStorage:", Object.fromEntries(Object.entries(sessionStorage)));
       navigate("/thanks"); 
     }
   };

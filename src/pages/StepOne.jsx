@@ -9,12 +9,12 @@ export const StepOne = () => {
 
   const onAnswerInputHandler = (e) => {
     const value = e.target.value.trim();
-    if (value.length >= 3) { 
+    if (value.length >= 1) { 
       setIsAnswerValid(true)
       return
     }
     
-    if (value.length < 3) {
+    if (value.length < 1) {
       setIsAnswerValid(false)
       return 
     }
@@ -24,6 +24,10 @@ export const StepOne = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const answer = document.querySelector("input[name='answer']").value.trim();
+    sessionStorage.setItem("question1", answer);
+    console.log("Current sessionStorage:", Object.fromEntries(Object.entries(sessionStorage)));
+
     if (isAnswerValid) {
       navigate("/step/2");
     }
